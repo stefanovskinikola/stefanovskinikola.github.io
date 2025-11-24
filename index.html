@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f6f6f8;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      form {
+        width: min(420px, 90vw);
+        display: grid;
+        gap: 14px;
+        padding: 24px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      }
+
+      label {
+        font-weight: 600;
+        margin-bottom: 4px;
+        display: inline-block;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #d5d7de;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      textarea {
+        min-height: 90px;
+        resize: vertical;
+      }
+
+      .group {
+        display: grid;
+        gap: 6px;
+      }
+
+      .options-row {
+        display: flex;
+        gap: 16px;
+      }
+
+      button {
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: #2d6cdf;
+        color: #fff;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #255cc1;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#" method="post">
+      <div class="group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Enter your name"
+          required
+        />
+      </div>
+
+      <div class="group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+
+      <div class="group">
+        <label>Gender</label>
+        <div class="options-row">
+          <label>
+            <input type="radio" name="gender" value="male" required />
+            Male
+          </label>
+          <label>
+            <input type="radio" name="gender" value="female" />
+            Female
+          </label>
+        </div>
+      </div>
+
+      <div class="group">
+        <label for="continent">Continent</label>
+        <select id="continent" name="continent" required>
+          <option value="" disabled selected>Select one</option>
+          <option value="africa">Africa</option>
+          <option value="asia">Asia</option>
+          <option value="europe">Europe</option>
+          <option value="north-america">North America</option>
+          <option value="south-america">South America</option>
+          <option value="oceania">Oceania</option>
+          <option value="antarctica">Antarctica</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <label>Meals</label>
+        <div class="options-row">
+          <label>
+            <input type="checkbox" name="meals" value="breakfast" />
+            Breakfast
+          </label>
+          <label>
+            <input type="checkbox" name="meals" value="lunch" />
+            Lunch
+          </label>
+          <label>
+            <input type="checkbox" name="meals" value="dinner" />
+            Dinner
+          </label>
+        </div>
+      </div>
+
+      <div class="group">
+        <label for="remarks">Remarks</label>
+        <textarea
+          id="remarks"
+          name="remarks"
+          placeholder="Comments or notes"
+        ></textarea>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
