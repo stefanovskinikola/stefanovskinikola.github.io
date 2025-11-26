@@ -1,0 +1,42 @@
+nav {
+  background-color: var(--main-color);
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+nav ul {
+  font-size: 0; /* Remove gaps between inline-block elements */
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav li a {
+  text-decoration: none;
+  color: var(--light-color);
+  display: inline-block;
+  font-size: 1.2rem;
+  transition: all 0.2s ease-in;
+  font-weight: bold;
+}
+
+nav li a.nav-link {
+  padding: 20px 40px;
+}
+
+nav li a.nav-language {
+  padding: 20px 10px;
+}
+
+nav li a:hover,
+.active {
+  color: var(--secondary-color);
+}
+
+nav li a img {
+  width: 1.3rem;
+}
