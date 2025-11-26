@@ -1,0 +1,31 @@
+.gallery {
+  background-color: #808080;
+  padding: 10rem 0 6rem 0;
+  color: var(--light-color);
+}
+
+.gallery .card img {
+  transition: transform 0.2s ease-in;
+}
+
+.gallery .card img:hover {
+  transform: scale(1.1);
+}
+
+.gallery .card {
+  width: 33.3%;
+  padding-bottom: 1rem;
+  overflow: hidden;
+}
+
+.gallery .card img {
+  width: 100%;
+}
+
+.card-inner h2 {
+  white-space: nowrap;
+}
+
+.card-inner p {
+  text-align: justify;
+}
