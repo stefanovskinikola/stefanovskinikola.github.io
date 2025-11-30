@@ -1,7 +1,16 @@
 const orderType = document.getElementById("order-type");
 const dateInput = document.getElementById("delivery-date");
 const timeInput = document.getElementById("delivery-time");
+const textArea = document.getElementById("notes");
 const noteEl = document.getElementById("delivery-note");
+const tipSelect = document.getElementById("tip");
+const customTipContainer = document.getElementById("custom-tip-container");
+const customTipInput = document.getElementById("custom-tip");
+const form = document.getElementById("order-form");
+const resetBtn = document.querySelector(".reset-btn");
+const modal = document.getElementById("reset-modal");
+const confirmReset = document.getElementById("confirm-reset");
+const cancelReset = document.getElementById("cancel-reset");
 
 // ==================================================
 // Dynamic Required Fields Based on Order Type
@@ -34,7 +43,7 @@ function updateRequiredFields() {
   });
 }
 
-// Listen for dropdown change
+// Listener for dropdown change
 orderType.addEventListener("change", updateRequiredFields);
 updateRequiredFields();
 
@@ -43,17 +52,17 @@ updateRequiredFields();
 // ==================================================
 function updateEmptyClass(input) {
   if (input.value === "") {
-    input.classList.add("empty"); // Add class if no value
+    input.classList.add("empty");
   } else {
-    input.classList.remove("empty"); // Remove class when user selects a value
+    input.classList.remove("empty");
   }
 }
 
-// Run once on page load to set initial state
+// Initial run
 updateEmptyClass(dateInput);
 updateEmptyClass(timeInput);
 
-// Listen for any changes in the inputs
+// Listener for any changes in the inputs
 ["input", "change"].forEach((eventName) => {
   dateInput.addEventListener(eventName, () => updateEmptyClass(dateInput));
   timeInput.addEventListener(eventName, () => updateEmptyClass(timeInput));
@@ -99,7 +108,7 @@ function updateRestrictions() {
 // Set min date
 dateInput.min = getTodayDate();
 
-// When the date changes
+// Listener for date change
 dateInput.addEventListener("change", updateRestrictions);
 
 // Initial run
@@ -111,3 +120,72 @@ setInterval(() => {
   updateEarliestMessage();
   updateRestrictions();
 }, 60 * 1000);
+
+// =================================================
+// Show/Hide Custom Tip Input
+// =================================================
+// Listener for changes on the Tip dropdown
+tipSelect.addEventListener("change", function () {
+  // If user selects "Custom", show the custom tip input and make it required
+  if (this.value === "custom") {
+    customTipContainer.classList.remove("hidden");
+    customTipInput.required = true;
+  } else {
+    customTipContainer.classList.add("hidden");
+    customTipInput.required = false;
+    customTipInput.value = "";
+  }
+});
+
+// =================================================
+// Proper Form Reset Handling
+// =================================================
+form.addEventListener("reset", function () {
+  setTimeout(() => {
+    // Recalculate "empty" class states for all fields that use it
+    [dateInput, timeInput, textArea].forEach(
+      (input) => input && updateEmptyClass(input)
+    );
+
+    // Hide custom tip field if it was visible
+    customTipContainer.classList.add("hidden");
+    customTipInput.required = false;
+  }, 0);
+});
+
+// =================================================
+// Custom Modal for Form Reset
+// =================================================
+/* Open Modal */
+resetBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  modal.classList.add("show");
+});
+
+/* Close Modal */
+function closeModal() {
+  modal.classList.remove("show");
+}
+
+/* Confirm Reset */
+confirmReset.addEventListener("click", function () {
+  closeModal();
+  form.reset();
+});
+
+/* Cancel Button */
+cancelReset.addEventListener("click", closeModal);
+
+/* Click Outside to Close */
+modal.addEventListener("click", function (e) {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+/* Click ESC Key to Close */
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeModal();
+  }
+});
