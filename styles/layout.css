@@ -1,0 +1,23 @@
+/* Layout */
+.backdrop {
+  position: fixed;
+  inset: -10% -10% auto auto;
+  width: 40vw;
+  aspect-ratio: 1;
+  background: radial-gradient(circle, rgba(255, 177, 122, 0.22), transparent 50%),
+    radial-gradient(circle at 70% 30%, rgba(107, 240, 200, 0.18), transparent 55%);
+  filter: blur(40px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  padding: 4rem 0;
+}
