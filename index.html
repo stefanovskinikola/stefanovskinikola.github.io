@@ -3,289 +3,176 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="styles/shared.css" />
-    <link rel="stylesheet" href="styles/layout.css" />
-    <link rel="stylesheet" href="styles/header.css" />
-    <link rel="stylesheet" href="styles/nav.css" />
-    <link rel="stylesheet" href="styles/hero.css" />
-    <link rel="stylesheet" href="styles/destinations.css" />
-    <link rel="stylesheet" href="styles/journeys.css" />
-    <link rel="stylesheet" href="styles/testimonials.css" />
-    <link rel="stylesheet" href="styles/cta.css" />
-    <link rel="stylesheet" href="styles/footer.css" />
-    <title>Atlas &amp; Co. Travel Studio</title>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/benefits.css" />
+    <link rel="stylesheet" href="css/products.css" />
+    <link rel="stylesheet" href="css/testimonial.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <title>LumoBite</title>
   </head>
   <body>
-    <div class="backdrop"></div>
-    <header class="header">
-      <div class="header__inner">
-        <div class="logo">Atlas &amp; Co.</div>
-        <input type="checkbox" id="nav-toggle" />
-        <label
-          for="nav-toggle"
-          class="nav-toggle"
-          aria-label="Toggle navigation"
-        >
-          <span></span>
-          <span></span>
-        </label>
-        <nav class="nav">
-          <a href="#destinations">Destinations</a>
-          <a href="#journeys">Journeys</a>
-          <a href="#testimonials">Stories</a>
-          <a href="#contact" class="pill">Plan a trip</a>
+    <!-- HEADER / NAV -->
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">LumoBite</a>
+          <ul class="nav-links">
+            <li><a href="#products">Products</a></li>
+            <li><a href="#about-us">About</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+          <a href="#" class="cta-btn">
+            Shop Now
+            <div class="cta-btn-icon">
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </a>
         </nav>
       </div>
     </header>
-
+    <!-- HERO -->
     <main>
-      <section class="hero" id="top">
-        <div class="hero__content">
-          <p class="eyebrow">Boutique travel studio</p>
-          <h1>
-            Tailor-made journeys crafted with bold imagination and calm detail.
-          </h1>
-          <p class="lede">
-            We design cinematic escapes that weave culture, landscape, and
-            unexpected encounters without you lifting a finger.
-          </p>
-          <div class="hero__actions">
-            <a class="btn primary" href="#contact">Design my escape</a>
-            <a class="btn ghost" href="#journeys">See how we plan</a>
-          </div>
-          <div class="hero__stats">
-            <div>
-              <span class="stat">82</span>
-              <span class="label">bespoke itineraries this year</span>
-            </div>
-            <div>
-              <span class="stat">38</span>
-              <span class="label">countries curated by locals</span>
-            </div>
-            <div>
-              <span class="stat">9.7</span>
-              <span class="label">avg. guest satisfaction</span>
-            </div>
-          </div>
-        </div>
-        <div class="hero__visual">
-          <div class="passport">
-            <div class="stamp">Approved</div>
-            <div class="passport__city">Lofoten, Norway</div>
-            <p>Midnight sun sailing, fjord saunas, and arctic tasting menus.</p>
-            <div class="chips">
-              <span>slow travel</span>
-              <span>private guide</span>
-              <span>design hotel</span>
-            </div>
-          </div>
-          <div class="photo-stack">
-            <div class="photo big lofoten"></div>
-            <div class="photo small kyoto"></div>
-            <div class="photo small marrakesh"></div>
-          </div>
-        </div>
-      </section>
-
-      <section class="destinations" id="destinations">
-        <div class="section-head">
-          <p class="eyebrow">Destinations that breathe</p>
-          <h2>Places we know like home, ready for your story.</h2>
-          <p class="lede">
-            We collaborate with on-the-ground hosts, chefs, and makers to open
-            doors few travelers ever find.
-          </p>
-        </div>
-        <div class="destinations__grid">
-          <article
-            class="card"
-            style="
-              --photo: url('https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=1400&q=80');
-            "
-          >
-            <div class="card__overlay">
-              <p class="eyebrow">Coastal Europe</p>
-              <h3>Amalfi by sail</h3>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-wrapper">
+            <div class="hero-content">
+              <div class="hero-labels">
+                <span class="hero-label">New</span>
+                <div class="dot-separator"></div>
+                <span class="hero-label">Healthy</span>
+                <div class="dot-separator"></div>
+                <span class="hero-label">Tasty</span>
+              </div>
+              <h1>Healthy snacks that keep you glowing.</h1>
               <p>
-                Skip the crowds: hidden coves, vineyard dinners, sunrise swims.
+                LumoBite brings you plant-based, low-sugar snacks for busy
+                people who care about what they eat.
               </p>
-              <div class="chips">
-                <span>yacht day</span>
-                <span>chef's table</span>
+              <div class="rating">
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star-half"></i>
+                </div>
+                <span>4.5 - (9208 reviews)</span>
+              </div>
+              <div class="hero-btns">
+                <a href="#" class="cta-btn">
+                  Get Started
+                  <div class="cta-btn-icon">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </a>
+                <a href="#" class="secondary-btn">
+                  View Flavors
+                  <div class="cta-btn-icon">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </a>
               </div>
             </div>
-          </article>
-          <article
-            class="card"
-            style="
-              --photo: url('https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1400&q=80');
-            "
-          >
-            <div class="card__overlay">
-              <p class="eyebrow">Asia Pacific</p>
-              <h3>Kyoto in bloom</h3>
-              <p>
-                Tea with artisans, lantern-lit alleys, and cedar onsen retreats.
-              </p>
-              <div class="chips">
-                <span>ryokan</span>
-                <span>kimono atelier</span>
+            <div class="hero-image">
+              <img src="img/hero-snack.webp" alt="Healthy Snack" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- BENEFITS -->
+      <section class="benefits fade-in-up" id="about-us">
+        <div class="container">
+          <div class="benefits-content">
+            <h2 class="section-title">Why LumoBite?</h2>
+            <div class="benefits-cards">
+              <div class="benefits-card">
+                <h3>Clean Ingredients</h3>
+                <p>
+                  No artificial colors, flavors, or preservatives — just real
+                  food.
+                </p>
+              </div>
+              <div class="benefits-card">
+                <h3>Energy Without Crash</h3>
+                <p>Balanced macros to keep you focused, not sleepy.</p>
+              </div>
+              <div class="benefits-card">
+                <h3>Eco-Friendly</h3>
+                <p>Sustainably sourced packaging and ingredients.</p>
               </div>
             </div>
-          </article>
-          <article
-            class="card"
-            style="
-              --photo: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?auto=format&fit=crop&w=1400&q=80');
-            "
-          >
-            <div class="card__overlay">
-              <p class="eyebrow">Desert &amp; Design</p>
-              <h3>Marrakesh reset</h3>
-              <p>
-                Courtyard riads, rooftop jazz, Atlas trails, and spice bazaars.
-              </p>
-              <div class="chips">
-                <span>artisan tour</span>
-                <span>hammam ritual</span>
+          </div>
+        </div>
+      </section>
+      <!-- PRODUCTS -->
+      <section class="products fade-in-up" id="products">
+        <div class="container">
+          <div class="products-content">
+            <h2 class="section-title">Popular Packs</h2>
+            <div class="products-cards">
+              <div class="products-card">
+                <span class="products-label">Bestseller</span>
+                <h3>Citrus Glow Mix</h3>
+                <p>12 snack bars • 100% vegan</p>
+              </div>
+              <div class="products-card">
+                <span class="products-label">New</span>
+
+                <h3>Midnight Cocoa Crunch</h3>
+                <p>12 snack bars • 100% vegan</p>
+              </div>
+              <div class="products-card">
+                <span class="products-label">Limited</span>
+                <h3>Berry Beam Bites</h3>
+                <p>12 snack bars • 100% vegan</p>
+              </div>
+              <div class="products-card">
+                <span class="products-label">Classic</span>
+                <h3>Tropical Pulse Pack</h3>
+                <p>12 snack bars • 100% vegan</p>
               </div>
             </div>
-          </article>
+          </div>
         </div>
       </section>
-
-      <section class="journeys" id="journeys">
-        <div class="section-head">
-          <p class="eyebrow">Signature journeys</p>
-          <h2>Designed like a film, produced like a five-star stay.</h2>
-        </div>
-        <div class="journeys__grid">
-          <div class="journey">
-            <div class="icon">01</div>
-            <div>
-              <h3>Discovery call</h3>
+      <!-- TESTIMONIAL -->
+      <section class="testimonial fade-in-up">
+        <div class="container">
+          <div class="testimonial-content">
+            <h3>What our customers say</h3>
+            <blockquote>
               <p>
-                We map your pace, passions, and non-negotiables, then build a
-                mood board that feels like you.
+                "LumoBite snacks finally fixed my 4pm energy crash. I keep a box
+                on my desk at all times."
               </p>
-            </div>
-          </div>
-          <div class="journey">
-            <div class="icon">02</div>
-            <div>
-              <h3>Hand-built itinerary</h3>
-              <p>
-                Routes, stays, and experiences are sourced with local fixers and
-                confirmed with concierge precision.
-              </p>
-            </div>
-          </div>
-          <div class="journey">
-            <div class="icon">03</div>
-            <div>
-              <h3>On-trip care</h3>
-              <p>
-                Live support, quiet upgrades, and daily refinements so you only
-                notice the magic, not the planning.
-              </p>
-            </div>
+              <cite>— Ana, UX Designer</cite>
+            </blockquote>
           </div>
         </div>
-        <div class="highlight">
-          <div>
-            <p class="eyebrow">Limited releases</p>
-            <h3>2024 / 2025 spotlight escapes</h3>
-            <p>
-              A rotating capsule of 12 journeys shaped by seasons, festivals,
-              and our favorite collaborators.
-            </p>
-            <div class="chips">
-              <span>Greenland heli-ski</span>
-              <span>Patagonia lodges</span>
-              <span>Okavango safari</span>
-              <span>Kyoto autumn</span>
-            </div>
-          </div>
-          <a class="btn secondary" href="#contact">Hold my dates</a>
-        </div>
-      </section>
-
-      <section class="testimonials" id="testimonials">
-        <div class="section-head">
-          <p class="eyebrow">Traveler notes</p>
-          <h2>Quiet, thoughtful service that keeps friends returning.</h2>
-        </div>
-        <div class="quotes">
-          <article class="quote">
-            <p>
-              "Every city felt like it had been waiting for us. Private
-              galleries, little jazz bars, chefs who treated us like family."
-            </p>
-            <span class="author"
-              >— Maya &amp; Theo, three-continent sabbatical</span
-            >
-          </article>
-          <article class="quote">
-            <p>
-              "The pace was perfect - morning hikes, slow lunches, surprise
-              sunset sail. We never touched logistics once."
-            </p>
-            <span class="author">— Aisha, Amalfi anniversary</span>
-          </article>
-          <article class="quote">
-            <p>
-              "Their concierge texted us weather pivots before it rained and
-              rebooked dinner to a chef's table we couldn't have found."
-            </p>
-            <span class="author">— Daniel, Tokyo &amp; Naoshima</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="cta" id="contact">
-        <div>
-          <p class="eyebrow">Ready when you are</p>
-          <h2>Tell us how you want to feel. We'll build the rest.</h2>
-          <p class="lede">
-            Three quick questions and we'll start curating routes, stays, and
-            experiences that fit your calendar.
-          </p>
-        </div>
-        <form class="cta__form">
-          <label>
-            Trip month
-            <input type="text" placeholder="e.g. May or flexible" />
-          </label>
-          <label>
-            Travelers
-            <input type="text" placeholder="e.g. 2 adults, 1 child" />
-          </label>
-          <label>
-            Vibe
-            <input type="text" placeholder="e.g. slow coastlines, art, food" />
-          </label>
-          <button type="button" class="btn primary">Start planning</button>
-        </form>
       </section>
     </main>
-
-    <footer class="footer">
-      <div class="logo">Atlas &amp; Co.</div>
-      <div class="footer__links">
-        <a href="#destinations">Destinations</a>
-        <a href="#journeys">Process</a>
-        <a href="#testimonials">Stories</a>
-        <a href="#contact">Contact</a>
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2025 LumoBite. All rights reserved.</p>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="smallprint">
-        Boutique travel design studio curating intentional journeys worldwide.
-      </p>
     </footer>
   </body>
 </html>
