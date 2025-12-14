@@ -90,6 +90,11 @@ section {
   overflow: clip;
 }
 
+.hero-label,
+.products-label {
+  text-transform: uppercase;
+}
+
 .dot-separator {
   width: 5px;
   height: 5px;

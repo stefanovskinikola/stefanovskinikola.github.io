@@ -89,6 +89,15 @@
 .hero-content h1 {
   font-size: clamp(2.5rem, 0.6222rem + 2.7778vw, 3.5rem);
   line-height: 1.2;
+  background: linear-gradient(
+    90deg,
+    rgba(var(--color-primary-rgb), 1) 0%,
+    rgba(var(--color-secondary-rgb), 1) 100%
+  );
+  color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .hero-content p {
