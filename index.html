@@ -1,67 +1,296 @@
 <!doctype html>
 <html lang="en">
+  <!-- prettier-ignore -->
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Discover | NexaNext</title>
-    <link rel="stylesheet" href="./main.css" />
+
+    <link rel="icon" type="image/png" href="/src/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/src/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/src/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="/src/img/favicon/site.webmanifest" />
+
+    <meta name="apple-mobile-web-app-title" content="Nikola Stefanovski" />
+    <meta property="og:title" content="Nikola Stefanovski">
+    <meta name="description" content="Personal Portfolio">
+    <meta property="og:description" content="Personal Portfolio">
+    <meta property="og:image" content="/src/img/og.webp">
+
+    <link rel="stylesheet" href="main.css" />
+    <title>Portfolio - Nikola Stefanovski</title>
   </head>
   <body>
+    <!-- HEADER -->
     <header>
       <div class="container">
         <nav>
-          <a href="index.html" class="logo-container">
-            <div class="logo">
-              <!-- prettier-ignore -->
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="gradientStroke" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="var(--primary)"/><stop offset="100%" stop-color="var(--accent)"/></linearGradient></defs><path d="M21 12C21 16.9706 16.9706 21 12 21M21 12C21 7.02944 16.9706 3 12 3M21 12C21 13.6569 16.9706 15 12 15C7.02944 15 3 13.6569 3 12M21 12C21 10.3431 16.9706 9 12 9C7.02944 9 3 10.3431 3 12M12 21C7.02944 21 3 16.9706 3 12M12 21C10.3431 21 9 16.9706 9 12C9 7.02944 10.3431 3 12 3M12 21C13.6569 21 15 16.9706 15 12C15 7.02944 13.6569 3 12 3M3 12C3 7.02944 7.02944 3 12 3" stroke="url(#gradientStroke)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <h1>NexaNext</h1>
-          </a>
-          <div class="btns-container">
-            <button class="btn theme-toggle"></button>
-            <a href="./src/login.html" class="btn btn-login">Login</a>
-            <a href="./src/register.html" class="btn btn-signup">Sign Up</a>
-            <a href="./index.html" class="btn btn-logout">Log Out</a>
-          </div>
+          <ul>
+            <li>
+              <a href="#hero">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+              </a>
+            </li>
+            <li>
+              <a href="#about">
+                <i class="fa-solid fa-address-card"></i>
+                <span>About</span>
+              </a>
+            </li>
+            <li>
+              <a href="#skills">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>Skills</span>
+              </a>
+            </li>
+            <li>
+              <a href="#projects">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Projects</span>
+              </a>
+            </li>
+            <li>
+              <a href="#contact">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact</span>
+              </a>
+            </li>
+          </ul>
+          <button id="theme-toggle" class="btn-theme"></button>
         </nav>
       </div>
     </header>
+    <!-- MAIN CONTENT -->
     <main>
-      <div class="container">
-        <section class="discover-hero">
-          <div>
-            <h2>Discover People</h2>
-            <p>Connect with peoples from around the world</p>
-          </div>
-          <div class="search-wrapper">
-            <!-- prettier-ignore -->
-            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="var(--text-secondary)" d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/></svg>
-            <input
-              type="text"
-              placeholder="Name, Job, Website..."
-              class="search-input"
-              autocomplete="off"
-            />
-          </div>
-        </section>
-        <div class="separator"></div>
-        <section class="grid-layout users-cards"></section>
-        <div class="load-more-container">
-          <button class="btn btn-load-more"></button>
+      <div class="bg-gradient-primary">
+        <div class="container">
+          <!-- HERO SECTION -->
+          <section id="hero" class="hero">
+            <section class="hero-details">
+              <h2>Hello, I'm</h2>
+              <h1 class="hero-name"></h1>
+              <h2 class="hero-title"></h2>
+              <p class="hero-description"></p>
+            </section>
+            <section class="hero-cta">
+              <div class="hero-social">
+                <a target="_blank" class="btn-social linkedin">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a target="_blank" class="btn-social github">
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a target="_blank" class="btn-social gitlab">
+                  <i class="fa-brands fa-square-gitlab"></i>
+                </a>
+              </div>
+              <div class="hero-btns">
+                <a href="#contact" class="get-in-touch btn-main">
+                  <span>
+                    Get in Touch<i class="fa-solid fa-arrow-down"></i>
+                  </span>
+                </a>
+                <a
+                  href="cv/Nikola_Stefanovski_CV.pdf"
+                  download
+                  class="btn-main"
+                >
+                  <span>Download CV<i class="fa-solid fa-download"></i></span>
+                </a>
+              </div>
+            </section>
+          </section>
         </div>
-        <div class="separator"></div>
-        <div class="pagination-container">
-          <div class="pagination"></div>
+      </div>
+      <div class="bg-gradient-secondary">
+        <div class="container">
+          <!-- ABOUT SECTION -->
+          <section id="about" class="about-section section-padding fade-in-up">
+            <h2 class="title">
+              <i class="fa-solid fa-address-card"></i>About Me
+            </h2>
+            <p class="about-description"></p>
+            <a target="_blank" class="find-out-more btn-secondary">
+              Find Out More
+              <div><i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+          </section>
+        </div>
+      </div>
+      <div class="bg-gradient-primary">
+        <div class="container">
+          <!-- SKILLS SECTION -->
+          <section id="skills" class="section-padding fade-in-up">
+            <h2 class="title">
+              <i class="fa-solid fa-laptop-code"></i>My Skills
+            </h2>
+            <section class="skills-section">
+              <section class="tech-stack">
+                <h2>Tech Stack</h2>
+              </section>
+              <section class="tech-skills">
+                <h2>Professional Skills</h2>
+              </section>
+            </section>
+          </section>
+        </div>
+      </div>
+      <div class="bg-gradient-secondary">
+        <div class="container">
+          <!-- PROJECTS SECTION -->
+          <section id="projects" class="section-padding fade-in-up">
+            <h2 class="title"><i class="fa-solid fa-briefcase"></i>My Works</h2>
+            <div id="project-filters" class="project-filters"></div>
+            <section class="projects-section"></section>
+            <a target="_blank" class="check-out-more btn-secondary">
+              Check Out More
+              <div><i class="fa-solid fa-arrow-right"></i></div>
+            </a>
+          </section>
+        </div>
+      </div>
+      <div class="bg-gradient-primary">
+        <div class="container">
+          <!-- CONTACT SECTION -->
+          <section id="contact" class="section-padding fade-in-up">
+            <h2 class="title">
+              <i class="fa-solid fa-envelope"></i>Get In Touch
+            </h2>
+            <div class="form-container">
+              <span class="note">
+                Fields marked with <span class="required">*</span> are required
+              </span>
+              <form>
+                <div class="form-input-row">
+                  <div class="input-group">
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="first-name"
+                        name="first-name"
+                        placeholder=" "
+                      />
+                      <label for="first-name">
+                        First Name <span class="required">*</span>
+                      </label>
+                    </div>
+                    <ul id="firstNameError" class="errorField"></ul>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrapper">
+                      <input
+                        type="text"
+                        id="last-name"
+                        name="last-name"
+                        placeholder=" "
+                      />
+                      <label for="last-name">Last Name</label>
+                    </div>
+                    <ul id="lastNameError" class="errorField"></ul>
+                  </div>
+                </div>
+                <div class="form-input-row">
+                  <div class="input-group">
+                    <div class="input-wrapper">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder=" "
+                      />
+                      <label for="email">
+                        Email
+                        <span class="required">*</span>
+                      </label>
+                    </div>
+                    <ul id="emailError" class="errorField"></ul>
+                  </div>
+                  <div class="input-group">
+                    <div class="input-wrapper">
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder=" "
+                      />
+                      <label for="phone">Phone</label>
+                    </div>
+                    <ul id="phoneError" class="errorField"></ul>
+                  </div>
+                </div>
+                <div class="form-input-row">
+                  <div class="input-group">
+                    <div class="input-wrapper">
+                      <textarea
+                        id="message"
+                        name="message"
+                        placeholder=" "
+                        maxlength="2000"
+                      ></textarea>
+                      <label for="message">
+                        Message <span class="required">*</span>
+                      </label>
+                      <div class="char-counter">
+                        <span class="char-current">0</span> / 2000
+                      </div>
+                    </div>
+                    <ul id="messageError" class="errorField"></ul>
+                  </div>
+                </div>
+                <div class="form-btns">
+                  <button type="submit" class="btn-submit">Send Message</button>
+                  <button type="reset" class="btn-reset">Reset</button>
+                </div>
+                <div class="form-message"></div>
+              </form>
+            </div>
+          </section>
         </div>
       </div>
     </main>
-    <footer>
+    <!-- FOOTER -->
+    <footer class="bg-gradient-secondary">
       <div class="container">
-        <p class="small-text">
-          NexaNext | People-first social network prototype
-        </p>
+        <div class="footer-inner">
+          <span>
+            Copyright &copy; <span id="current-year"></span> Nikola Stefanovski
+            &mdash; Built as a Homework Assignment for the Web Development
+            Academy
+          </span>
+          <a href="#hero"><i class="fa-solid fa-caret-up"></i></a>
+        </div>
       </div>
     </footer>
-    <script type="module" src="./main.js"></script>
+
+    <div id="image-modal" class="modal">
+      <span class="modal-close">
+        <i class="fa-regular fa-rectangle-xmark"></i>
+      </span>
+      <img class="modal-img" />
+    </div>
+
+    <div id="reset-modal" class="modal">
+      <div class="confirm-box">
+        <h3>Are you sure?</h3>
+        <p>This will clear all the information you've entered.</p>
+        <div class="reset-btns">
+          <button id="confirm-reset-btn" class="btn-tertiary">
+            Yes, Clear It
+          </button>
+          <button id="cancel-reset-btn" class="btn-tertiary">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/d3334bd7a7.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

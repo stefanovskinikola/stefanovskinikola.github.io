@@ -1,63 +1,27 @@
-import { initTheme } from "./src/js/modules/theme.js";
-import { updateAuthUI } from "./src/js/modules/auth-ui.js";
-import { initLogout } from "./src/js/modules/logout.js";
+import { initThemeToggle } from "./src/js/ui/themeToggle.js";
+import { initNavHighlight } from "./src/js/ui/navHighlight.js";
+import { loadPortfolioData } from "./src/js/services/api.js";
+import { renderInfo } from "./src/js/utils/renders/profile.js";
+import { renderSkills } from "./src/js/utils/renders/skills.js";
+import { renderProjects } from "./src/js/utils/renders/projects.js";
+import { filterProjects } from "./src/js/ui/filterProjects.js";
+import { renderFooter } from "./src/js/utils/renders/footer.js";
+import { initModal } from "./src/js/ui/initModal.js";
+import { initContactForm } from "./src/js/ui/contactForm.js";
+import { initEmailService } from "./src/js/services/email.js";
 
-function initCore() {
-  initTheme();
-  updateAuthUI();
-  initLogout();
-}
+document.addEventListener("DOMContentLoaded", async () => {
+  initThemeToggle();
+  initNavHighlight();
+  initEmailService();
+  initContactForm();
+  initModal();
+  renderFooter();
 
-function detectAndInitPage() {
-  const path = window.location.pathname;
-  const page = path.split("/").pop().replace(".html", "") || "index";
+  const { profile, projects } = await loadPortfolioData();
 
-  switch (page) {
-    case "index":
-    case "":
-      import("./src/js/pages/discover.js").then((module) => {
-        module.initDiscoverPage();
-      });
-      break;
-
-    case "profile":
-      import("./src/js/pages/profile.js").then((module) => {
-        module.initProfilePage();
-      });
-      break;
-
-    case "gallery":
-      import("./src/js/pages/gallery.js").then((module) => {
-        module.initGalleryPage();
-      });
-      break;
-
-    case "login":
-      Promise.all([
-        import("./src/js/pages/login.js"),
-        import("./src/js/modules/password-toggle.js"),
-      ]).then(([loginModule, toggleModule]) => {
-        loginModule.initLoginPage();
-        toggleModule.initPasswordToggles();
-      });
-      break;
-
-    case "register":
-      Promise.all([
-        import("./src/js/pages/register.js"),
-        import("./src/js/modules/password-toggle.js"),
-      ]).then(([registerModule, toggleModule]) => {
-        registerModule.initRegisterPage();
-        toggleModule.initPasswordToggles();
-      });
-      break;
-  }
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", detectAndInitPage);
-} else {
-  detectAndInitPage();
-}
-
-initCore();
+  renderInfo(profile);
+  renderSkills(profile);
+  renderProjects(projects);
+  filterProjects(projects);
+});
